@@ -1,5 +1,5 @@
 ## UIButton-HHAddLayout
-* 使用UIView扩展添加badge
+* 使用UIButton扩展方便地调整按钮原本图片和文本的位置
 ## How to use
 * code
 ``` objective-c
