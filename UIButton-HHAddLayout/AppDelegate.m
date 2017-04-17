@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HHButtonLayoutViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [window makeKeyAndVisible];
+    [window setRootViewController:[[UINavigationController alloc] initWithRootViewController:[HHButtonLayoutViewController new]]];
+    [self setWindow:window];
     return YES;
 }
 

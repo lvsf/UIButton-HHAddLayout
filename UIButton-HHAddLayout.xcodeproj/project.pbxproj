@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		17A4BF471EA4BD4900472A24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF461EA4BD4900472A24 /* main.m */; };
 		17A4BF4A1EA4BD4900472A24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF491EA4BD4900472A24 /* AppDelegate.m */; };
-		17A4BF4D1EA4BD4900472A24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF4C1EA4BD4900472A24 /* ViewController.m */; };
 		17A4BF501EA4BD4900472A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A4BF4E1EA4BD4900472A24 /* Main.storyboard */; };
 		17A4BF521EA4BD4900472A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A4BF511EA4BD4900472A24 /* Assets.xcassets */; };
 		17A4BF551EA4BD4900472A24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A4BF531EA4BD4900472A24 /* LaunchScreen.storyboard */; };
+		17A4BF5E1EA4BEC300472A24 /* HHButtonLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF5D1EA4BEC300472A24 /* HHButtonLayoutViewController.m */; };
+		17A4BF641EA4BEE400472A24 /* UIButton+HHAddLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF611EA4BEE400472A24 /* UIButton+HHAddLayout.m */; };
+		17A4BF651EA4BEE400472A24 /* 任飘渺.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A4BF631EA4BEE400472A24 /* 任飘渺.png */; };
+		17A4BF681EA4C59100472A24 /* HHButtonLayoutXIBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A4BF671EA4C59100472A24 /* HHButtonLayoutXIBView.m */; };
+		17A4BF6A1EA4C5A000472A24 /* HHButtonLayoutXIBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A4BF691EA4C5A000472A24 /* HHButtonLayoutXIBView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,18 @@
 		17A4BF461EA4BD4900472A24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17A4BF481EA4BD4900472A24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		17A4BF491EA4BD4900472A24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		17A4BF4B1EA4BD4900472A24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		17A4BF4C1EA4BD4900472A24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		17A4BF4F1EA4BD4900472A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17A4BF511EA4BD4900472A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A4BF541EA4BD4900472A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17A4BF561EA4BD4900472A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17A4BF5C1EA4BEC300472A24 /* HHButtonLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHButtonLayoutViewController.h; sourceTree = "<group>"; };
+		17A4BF5D1EA4BEC300472A24 /* HHButtonLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHButtonLayoutViewController.m; sourceTree = "<group>"; };
+		17A4BF601EA4BEE400472A24 /* UIButton+HHAddLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HHAddLayout.h"; sourceTree = "<group>"; };
+		17A4BF611EA4BEE400472A24 /* UIButton+HHAddLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HHAddLayout.m"; sourceTree = "<group>"; };
+		17A4BF631EA4BEE400472A24 /* 任飘渺.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "任飘渺.png"; sourceTree = "<group>"; };
+		17A4BF661EA4C59100472A24 /* HHButtonLayoutXIBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHButtonLayoutXIBView.h; sourceTree = "<group>"; };
+		17A4BF671EA4C59100472A24 /* HHButtonLayoutXIBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHButtonLayoutXIBView.m; sourceTree = "<group>"; };
+		17A4BF691EA4C5A000472A24 /* HHButtonLayoutXIBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHButtonLayoutXIBView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +68,15 @@
 		17A4BF441EA4BD4900472A24 /* UIButton-HHAddLayout */ = {
 			isa = PBXGroup;
 			children = (
+				17A4BF5F1EA4BEE400472A24 /* Class */,
+				17A4BF621EA4BEE400472A24 /* Resource */,
 				17A4BF481EA4BD4900472A24 /* AppDelegate.h */,
 				17A4BF491EA4BD4900472A24 /* AppDelegate.m */,
-				17A4BF4B1EA4BD4900472A24 /* ViewController.h */,
-				17A4BF4C1EA4BD4900472A24 /* ViewController.m */,
+				17A4BF661EA4C59100472A24 /* HHButtonLayoutXIBView.h */,
+				17A4BF671EA4C59100472A24 /* HHButtonLayoutXIBView.m */,
+				17A4BF691EA4C5A000472A24 /* HHButtonLayoutXIBView.xib */,
+				17A4BF5C1EA4BEC300472A24 /* HHButtonLayoutViewController.h */,
+				17A4BF5D1EA4BEC300472A24 /* HHButtonLayoutViewController.m */,
 				17A4BF4E1EA4BD4900472A24 /* Main.storyboard */,
 				17A4BF511EA4BD4900472A24 /* Assets.xcassets */,
 				17A4BF531EA4BD4900472A24 /* LaunchScreen.storyboard */,
@@ -77,6 +92,23 @@
 				17A4BF461EA4BD4900472A24 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17A4BF5F1EA4BEE400472A24 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				17A4BF601EA4BEE400472A24 /* UIButton+HHAddLayout.h */,
+				17A4BF611EA4BEE400472A24 /* UIButton+HHAddLayout.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		17A4BF621EA4BEE400472A24 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				17A4BF631EA4BEE400472A24 /* 任飘渺.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +142,7 @@
 				TargetAttributes = {
 					17A4BF411EA4BD4900472A24 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = E3753X2444;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,6 +173,8 @@
 				17A4BF551EA4BD4900472A24 /* LaunchScreen.storyboard in Resources */,
 				17A4BF521EA4BD4900472A24 /* Assets.xcassets in Resources */,
 				17A4BF501EA4BD4900472A24 /* Main.storyboard in Resources */,
+				17A4BF651EA4BEE400472A24 /* 任飘渺.png in Resources */,
+				17A4BF6A1EA4C5A000472A24 /* HHButtonLayoutXIBView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A4BF4D1EA4BD4900472A24 /* ViewController.m in Sources */,
+				17A4BF5E1EA4BEC300472A24 /* HHButtonLayoutViewController.m in Sources */,
+				17A4BF681EA4C59100472A24 /* HHButtonLayoutXIBView.m in Sources */,
+				17A4BF641EA4BEE400472A24 /* UIButton+HHAddLayout.m in Sources */,
 				17A4BF4A1EA4BD4900472A24 /* AppDelegate.m in Sources */,
 				17A4BF471EA4BD4900472A24 /* main.m in Sources */,
 			);
@@ -272,7 +309,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E3753X2444;
 				INFOPLIST_FILE = "UIButton-HHAddLayout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YunSL.UIButton-HHAddLayout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,7 +322,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E3753X2444;
 				INFOPLIST_FILE = "UIButton-HHAddLayout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YunSL.UIButton-HHAddLayout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,6 +350,7 @@
 				17A4BF5B1EA4BD4900472A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

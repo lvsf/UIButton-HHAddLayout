@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HHButtonLayoutXIBView.h
 //  UIButton-HHAddLayout
 //
 //  Created by YunSL on 17/4/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface HHButtonLayoutXIBView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *xibButton;
 @end
-
