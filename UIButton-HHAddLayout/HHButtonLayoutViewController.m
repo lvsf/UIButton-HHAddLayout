@@ -26,6 +26,8 @@
     [btn setTitle:@"任飘渺" forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"任飘渺"] forState:UIControlStateNormal];
     [btn setBackgroundColor:[UIColor orangeColor]];
+    [btn setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
     [btn setHh_layoutStyle:HHButtonLayoutStyleImageOnTheTop];
     [btn sizeToFit];
     [btn setFrame:(CGRect){CGPointMake(10, 75),btn.bounds.size}];
@@ -52,11 +54,12 @@
     [btn2 setImage:[UIImage imageNamed:@"任飘渺"] forState:UIControlStateNormal];
     [btn2 setBackgroundColor:[UIColor lightGrayColor]];
     [btn2 setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-    [btn2 setHh_layoutStyle:HHButtonLayoutStyleImageOnTheLeft];
+    [btn2 setHh_layoutStyle:HHButtonLayoutStyleImageOnTheTop];
     [btn2 setHh_verticalSpacing:10];
     [btn2 setHh_preferredMaxImageSize:CGSizeMake(35, 35)];
     [btn2 setHh_preferredMaxLayoutWidth:100];
     [btn2 setHh_horizontalSpacing:10];
+    [btn2 setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
     [btn2 setFrame:CGRectMake(CGRectGetMinX(btn1.frame), CGRectGetMaxY(btn1.frame) + 5, CGRectGetWidth(btn1.frame), CGRectGetHeight(btn.frame) - CGRectGetHeight(btn1.frame) - 5)];
     [self.view addSubview:btn2];
     

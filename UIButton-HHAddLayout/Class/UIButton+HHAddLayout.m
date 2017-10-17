@@ -57,7 +57,8 @@ static char HHPrivateButtonOriginalClasskey;
     self.contentSize = [super sizeThatFits:size];
     if (self.hh_layoutStyle != HHButtonLayoutStyleSystem &&
         self.imageView.image &&
-        self.titleLabel.text.length > 0) {
+        (self.titleLabel.text.length > 0 ||
+         self.titleLabel.attributedText.length > 0)) {
         [self updateContentSize];
     }
     return self.contentSize;
@@ -67,7 +68,8 @@ static char HHPrivateButtonOriginalClasskey;
     self.contentSize = [super intrinsicContentSize];
     if (self.hh_layoutStyle != HHButtonLayoutStyleSystem &&
         self.imageView.image &&
-        self.titleLabel.text.length > 0) {
+        (self.titleLabel.text.length > 0 ||
+         self.titleLabel.attributedText.length > 0)) {
         [self updateContentSize];
     }
     return self.contentSize;
@@ -77,7 +79,8 @@ static char HHPrivateButtonOriginalClasskey;
     [super layoutSubviews];
     if (self.hh_layoutStyle != HHButtonLayoutStyleSystem &&
         self.imageView.image &&
-        self.titleLabel.text.length > 0) {
+        (self.titleLabel.text.length > 0 ||
+         self.titleLabel.attributedText.length > 0)) {
         [self updateLayoutWithPreferredWidth:CGRectGetWidth(self.frame) height:CGRectGetHeight(self.frame)];
         [self.titleLabel setFrame:self.titleLabelFrame];
         [self.imageView setFrame:self.imageViewFrame];
@@ -113,10 +116,11 @@ static char HHPrivateButtonOriginalClasskey;
             maxTextWidth = preferredMaxContentWidth - imageSize.width - self.hh_horizontalSpacing;
         }
         if (maxTextWidth > 0 && maxTextHeight > 0) {
-            textSize = [self.currentTitle boundingRectWithSize:CGSizeMake(maxTextWidth, maxTextHeight)
-                                                       options:NSStringDrawingUsesLineFragmentOrigin|                                       NSStringDrawingUsesFontLeading
-                                                    attributes:@{NSFontAttributeName:self.titleLabel.font}
-                                                       context:nil].size;
+            NSAttributedString *attributdTitle = self.currentAttributedTitle;
+            if (attributdTitle == nil && self.currentTitle) {
+                attributdTitle = [[NSAttributedString alloc] initWithString:self.currentTitle attributes:@{NSFontAttributeName:self.titleLabel.font}];
+            }
+            textSize = [attributdTitle boundingRectWithSize:CGSizeMake(maxTextWidth, maxTextHeight) options:NSStringDrawingUsesLineFragmentOrigin|                                       NSStringDrawingUsesFontLeading context:nil].size;
         }
         //4.计算图片和文本坐标
         CGFloat estimateContentWidth = imageSize.width + textSize.width + self.hh_horizontalSpacing;
@@ -131,15 +135,28 @@ static char HHPrivateButtonOriginalClasskey;
             {
                 CGFloat topY = 0;
                 CGFloat bottomY = 0;
-                if (estimateContentHeight < preferredMaxContentWidth)
-                {
-                    CGFloat topHeight = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheTop)?imageSize.height:textSize.height;
-                    topY = (CGRectGetHeight(self.frame) - estimateContentHeight) * 0.5;
-                    bottomY = topY + topHeight + self.hh_verticalSpacing;
+                CGFloat topHeight = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheTop)?imageSize.height:textSize.height;
+                CGFloat bottomHeight = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheBottom)?imageSize.height:textSize.height;
+                if (estimateContentHeight < preferredMaxContentHeight) {
+                    switch (self.contentVerticalAlignment) {
+                        case UIControlContentVerticalAlignmentCenter:
+                        case UIControlContentVerticalAlignmentFill:
+                            topY = (CGRectGetHeight(self.frame) - estimateContentHeight) * 0.5;
+                            bottomY = topY + topHeight + self.hh_verticalSpacing;
+                            break;
+                        case UIControlContentVerticalAlignmentTop:
+                            topY = self.contentEdgeInsets.top;
+                            bottomY = topY + topHeight + self.hh_verticalSpacing;
+                            break;
+                        case UIControlContentVerticalAlignmentBottom:
+                            bottomY = CGRectGetHeight(self.frame) - bottomHeight - self.contentEdgeInsets.bottom;
+                            topY =  bottomY - topHeight - self.hh_verticalSpacing;
+                            break;
+                        default:
+                            break;
+                    }
                 }
-                else
-                {
-                    CGFloat bottomHeight = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheBottom)?imageSize.height:textSize.height;
+                else {
                     topY = self.contentEdgeInsets.top;
                     bottomY = CGRectGetHeight(self.frame) - self.contentEdgeInsets.bottom - bottomHeight;
                 }
@@ -154,14 +171,12 @@ static char HHPrivateButtonOriginalClasskey;
             {
                 CGFloat leftX = 0;
                 CGFloat rightX = 0;
-                if (estimateContentWidth < preferredMaxContentWidth)
-                {
+                if (estimateContentWidth < preferredMaxContentWidth) {
                     CGFloat leftWidth = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheLeft)?imageSize.width:textSize.width;
                     leftX = (CGRectGetWidth(self.frame) - estimateContentWidth) * 0.5;
                     rightX = leftX + leftWidth + self.hh_horizontalSpacing;
                 }
-                else
-                {
+                else {
                     CGFloat rightWidth = (self.hh_layoutStyle == HHButtonLayoutStyleImageOnTheRight)?imageSize.width:textSize.width;
                     leftX = self.contentEdgeInsets.left;
                     rightX = preferredWidth - self.contentEdgeInsets.right - rightWidth;
@@ -212,7 +227,7 @@ static char HHPrivateButtonOriginalClasskey;
 @implementation UIButton (HHAddLayout)
 
 - (void)handleClassReplace {
-    if (!objc_getAssociatedObject(self, &HHPrivateButtonOriginalClasskey)) {
+    if (objc_getAssociatedObject(self, &HHPrivateButtonOriginalClasskey) == nil) {
         objc_setAssociatedObject(self, &HHPrivateButtonOriginalClasskey, NSStringFromClass(self.class), OBJC_ASSOCIATION_COPY_NONATOMIC);
         object_setClass(self, [HHPrivateLayoutButton class]);
     }

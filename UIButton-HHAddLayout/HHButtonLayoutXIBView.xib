@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="xibButton" destination="RLJ-Sm-MsH" id="3jZ-fJ-Wdt"/>
             </connections>
-            <point key="canvasLocation" x="-154" y="-165"/>
+            <point key="canvasLocation" x="69" y="-178"/>
         </view>
     </objects>
     <resources>
